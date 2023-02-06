@@ -1,0 +1,38 @@
+.sidebar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1f9f4;
+    height: 60vmax;
+}
+
+.list {
+    margin-top: -8vmax;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.logo h1{
+    font-size: 35px;
+    line-height: 44px;
+    color: #1A1B1C;
+    font-weight: 700;
+}
+.list section{
+    display: flex;
+    align-items: center;
+    gap: 1vmax;
+}
+section h4{
+    color: #AAAAAA;
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+}
+img{
+    position: relative;
+}
