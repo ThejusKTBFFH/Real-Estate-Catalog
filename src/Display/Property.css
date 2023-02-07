@@ -1,0 +1,33 @@
+.display-property{
+    background-color : #ffffff;
+    padding : 30px;
+    border-bottom: 2px solid  #E1F9F4;
+}
+
+.user{
+    display: flex;
+    justify-content : space-between;
+}
+
+.right {
+    color: #A6A6A6;
+}
+.left section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.left select {
+    border: none;
+    width: 86%;
+    color: #A6A6A6;
+    cursor: pointer;
+}
+
+.select {
+    width: 140px;
+}
