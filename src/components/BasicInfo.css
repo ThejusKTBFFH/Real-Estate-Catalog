@@ -1,0 +1,45 @@
+.home{
+    /* background-color: antiquewhite; */
+    /* width: 30vw; */
+    display: flex;
+    justify-content: flex-start;
+}
+.one{
+    width: 30vw;
+    background-color: aqua;
+}
+.maincontainer{
+    display: flex;
+    /* background-color: blue; */
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.selectBox{
+    padding: 10px;
+    width: 360px;
+    border-radius: 6px;
+}
+
+
+.newbuttoncontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vmax;
+    gap: 2vmax;
+  }
+  
+  .newbutton button {
+    width: 150px;
+    height: 43px;
+    background: #6ab4f8;
+    box-shadow: 0px 10px 25px rgb(0 0 0 / 13%);
+    border: none;
+    border-radius: 207px;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 5px 5px 8px rgb(207, 225, 231);
+    cursor: pointer;
+  }
