@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./BasicInfo.css";
 
-export default function BasicInfo(){
+export default function BasicInfo() {
   const navigator = useNavigate();
   const location = useLocation();
   const [basicDetails, setDetails] = useState({
@@ -21,109 +21,118 @@ export default function BasicInfo(){
   });
 
   function InputExample() {
-    const [value, setValue] = useState('');
-  
+    const [value, setValue] = useState("");
+
     return (
       <input
         type="text"
         value={value}
-        onChange={e => setValue(e.target.value)}
+        onChange={(e) => setValue(e.target.value)}
       />
     );
   }
 
-    return(
-        <>
-        <div className="home">
-          <div className="one">
-            <Sidebar />
-          </div>
-          <div className="two">
-            <Property />
-            <AddNewProperty />
-            <div className="maincontainer">
-            <div className="row">
-              <div>
-                <span className="titles">Property Type</span>
+  return (
+    <>
+      <div className="home">
+        <div className="one">
+          <Sidebar />
+        </div>
+        <div className="two">
+          <Property />
+          <AddNewProperty />
 
-                <div className="selectBox">
-                  <select
-                    defaultValue={"toilet"}
-                    className="selectBox"
-                    onChange={(e) => {
-                      setDetails({
-                        ...basicDetails,
-                        Property_Type: e.target.value,
-                      });
-                    }}
-                  >
-                  <option value={"toilet"}>Select propety Type</option>
-                    <option>Flat</option>
-                    <option>House</option>
-                    <option>Plot</option>
-                  </select>
-                </div>
-            </div>
-            </div>
-            <span className="titles">Negotiable</span>
-                <div className="selectBox">
-                  <select 
-                    defaultValue={"toilet"}
-                    className="selectBox"
-                    onChange={(e) => {
-                      setDetails({
-                        ...basicDetails,
-                        Negotiable: e.target.value,
-                      });
-                    }}>
-                    <option value={"toilet"}>Select Negotiable</option>
-                    <option>Yes</option>
-                    <option>NO</option>
-                  </select> 
+          <div className="maincontainer">
+            <div className="box1">
+              <div className="row">
+                <div>
+                  <span className="titles">Property Type</span>
+
+                  <div className="selectBox">
+                    <select
+                      defaultValue={"toilet"}
+                      className="selectBox"
+                      onChange={(e) => {
+                        setDetails({
+                          ...basicDetails,
+                          Property_Type: e.target.value,
+                        });
+                      }}
+                    >
+                      <option value={"toilet"}>Select propety Type</option>
+                      <option>Flat</option>
+                      <option>House</option>
+                      <option>Plot</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div>
-                <span className="titles">Price</span>
-
-                <div className="inputBox">
-              <input placeholder="Example:10000" onClick={ InputExample}></input>
-                </div>
+              <span className="titles">Negotiable</span>
+              <div className="selectBox">
+                <select
+                  defaultValue={"toilet"}
+                  className="selectBox"
+                  onChange={(e) => {
+                    setDetails({
+                      ...basicDetails,
+                      Negotiable: e.target.value,
+                    });
+                  }}
+                >
+                  <option value={"toilet"}>Select Negotiable</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
               </div>
-              <div>
-                <span className="titles">Ownership</span>
-                <div className="selectBox">
-                  <select
-                     defaultValue={"toilet"}
-                    className="selectBox"
-                    onChange={(e) => {
-                      setDetails({
-                        ...basicDetails,
+              <div className="row">
+                <div>
+                  <span className="titles">Price</span>
+
+                  <div className="selectBox">
+                    <input
+                      placeholder="Example:10000"
+                      onClick={InputExample}
+                    ></input>
+                  </div>
+                </div>
+                <div>
+                  <span className="titles">Ownership</span>
+                  <div className="selectBox">
+                    <select
+                      defaultValue={"toilet"}
+                      className="selectBox"
+                      onChange={(e) => {
+                        setDetails({
+                          ...basicDetails,
                           Ownership: e.target.value,
-                      });
-                    }}>
-                    <option value={"toilet"}>Select Ownership</option>
-                    <option>Yes</option>
-                    <option>NO</option>
-                  </select>
+                        });
+                      }}
+                    >
+                      <option value={"toilet"}>Select Ownership</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div className="box2">
+
             <div className="row">
               <div>
                 <span className="titles">Property Age</span>
-
                 <div className="selectBox">
                   <select
-                     defaultValue={"toilet"}
+                    defaultValue={"toilet"}
                     className="selectBox"
                     onChange={(e) => {
                       setDetails({
                         ...basicDetails,
                         Property_Age: e.target.value,
                       });
-                    }}>
+                    }}
+                  >
                     <option value={"toilet"}>Property Age</option>
                     <option>Flat</option>
                     <option>House</option>
@@ -131,82 +140,97 @@ export default function BasicInfo(){
                   </select>
                 </div>
               </div>
+            </div>
+
               <div>
                 <span className="titles">Property Approved</span>
                 <div className="selectBox">
                   <select
-                       defaultValue={"toilet"}
+                    defaultValue={"toilet"}
                     className="selectBox"
                     onChange={(e) => {
                       setDetails({
                         ...basicDetails,
                         Property_Approved: e.target.value,
                       });
-                    }}>
+                    }}
+                  >
                     <option value={"toilet"}>Property Approved</option>
                     <option>Yes</option>
-                    <option>NO</option>
+                    <option>No</option>
                   </select>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div>
-                <span className="titles">Property Description</span>
+              <div className="row">
+                <div>
+                  <span className="titles">Property Description</span>
 
-                <div className="selectBox">
-                  <select
-                       defaultValue={"toilet"}
-                    className="selectBox"
-                    onChange={(e) => {
-                      setDetails({
-                        ...basicDetails,
-                        Property_Description: e.target.value,
-                      });
-                    }}>
-                    <option value={"toilet"}></option>
-                    <option>Flat</option>
-                    <option>House</option>
-                    <option>Plot</option>
-                  </select>
+                  <div className="selectBox">
+                    <select
+                      defaultValue={"toilet"}
+                      className="selectBox"
+                      onChange={(e) => {
+                        setDetails({
+                          ...basicDetails,
+                          Property_Description: e.target.value,
+                        });
+                      }}
+                    >
+                      <option value={"toilet"}></option>
+                      <option>Flat</option>
+                      <option>House</option>
+                      <option>Plot</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <span className="titles">Bank Loan</span>
-                <div className="selectBox">
-                  <select
-                       defaultValue={"toilet"}
-                    className="selectBox"
-                    onChange={(e) => {
-                      setDetails({
-                        ...basicDetails,
-                        Bank_Loan: e.target.value,
-                      });
-                    }}>
-                    <option value={"toilet"}>Bank Loan</option>
-                    <option>Yes</option>
-                    <option>NO</option>
-                  </select>
+                <div>
+                  <span className="titles">Bank Loan</span>
+                  <div className="selectBox">
+                    <select
+                      defaultValue={"toilet"}
+                      className="selectBox"
+                      onChange={(e) => {
+                        setDetails({
+                          ...basicDetails,
+                          Bank_Loan: e.target.value,
+                        });
+                      }}
+                    >
+                      <option value={"toilet"}>Bank Loan</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
-            </div>  
+            </div>
+
             <div className="newbuttoncontainer">
-            <div className="newbutton">
-              <button  onClick={() => {
-                  navigator("/home",{state:basicDetails});
-                }}>
-                Cancel
-              </button>
-            </div>
+              <div className="newbutton">
+                <button
+                  onClick={() => {
+                    navigator("/home", { state: basicDetails });
+                  }}
+                >
+                  Cancel
+                </button>
+              </div>
 
-            <div className="newbutton">
-              <button onClick={() => {
-    navigator("/propertyDetail", { state: { basicDetails: basicDetails }});
-              }}>Save & Continue</button>
+              <div className="newbutton">
+                <button
+                  onClick={() => {
+                    navigator("/propertyDetail", {
+                      state: { basicDetails: basicDetails },
+                    });
+                  }}
+                >
+                  Save & Continue
+                </button>
+              </div>
             </div>
-          </div>
-            </>
-    )
+        </div>
+      </div>
+    </>
+  );
 }
-
