@@ -9,17 +9,27 @@
     background-color: aqua;
 }
 .maincontainer{
+    margin: 14px;
     display: flex;
     /* background-color: blue; */
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    /* border: 1px solid gray; */
+    background-color: rgb(251, 251, 251);
+    border-radius: 6px;
+    padding: 4px;
+    box-shadow: 3px 3px 10px 4px rgb(207, 225, 231);
+
 }
 
 .selectBox{
     padding: 10px;
     width: 360px;
     border-radius: 6px;
+}
+.titles{
+    font-size: 12px;
 }
 
 
@@ -28,7 +38,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 2vmax;
-    gap: 2vmax;
+    gap: 1vmax;
   }
   
   .newbutton button {
