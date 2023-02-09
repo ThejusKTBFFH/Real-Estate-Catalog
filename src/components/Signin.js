@@ -13,7 +13,7 @@ function Signin() {
 
     const onSignin = (e) => {
         e.preventDefault();
-        fetch("https://realestatebackend0.onrender.com/api/v1/signin", {
+        fetch("", {
           method: "post",
           headers: {
             "Content-Type": "application/json",
