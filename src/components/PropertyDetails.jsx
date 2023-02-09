@@ -27,11 +27,11 @@ const PropertyDetail = () => {
     Electricity: "",
     Facing: "",
   });
-  const basicDetails = location.state.basicDetails;
+  // const basicDetails = location.state.basicDetails;
  
   const onContinue = () => {
     //console.log(propertyDetails);
-    navigator("/generalInfo", { state: { propertyDetails, basicDetails } });
+    // navigator("/generalInfo", { state: { propertyDetails, basicDetails } });
   };
 
   return (
