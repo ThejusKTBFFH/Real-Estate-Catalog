@@ -4,6 +4,8 @@ import Home from './Display/Home';
 import BasicInfo from './components/BasicInfo';
 import LocationInfo from './components/LocationInfo';
 
+import PropertyDetail from './components/PropertyDetails';
+import GeneralInfo from './components/Generalinfo';
 
 import {BrowserRouter,Routes, Route } from 'react-router-dom'
 
@@ -18,6 +20,10 @@ function App() {
     <Route path="/home" element={<Home/>}/>
    <Route path='/basicinfo' element={<BasicInfo/>}/>
    <Route path='/locationinfo' element={<LocationInfo/>}/>
+
+   <Route path="/propertyDetail" element={<PropertyDetail/>}/>
+   <Route path="/generalinfo" element={<GeneralInfo/>}/>
+
     </Routes>
     
     
