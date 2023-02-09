@@ -8,13 +8,6 @@
     width: 30vw;
     background-color: aqua;
 }
-/* .box1{
-    background-color: #6ab4f8;
-} */
-.box2{
-    /* background-color: lightcoral; */
-    margin-bottom: auto;
-}
 .maincontainer{
     margin: 14px;
     display: flex;
