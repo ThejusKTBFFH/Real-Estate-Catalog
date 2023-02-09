@@ -1,6 +1,8 @@
 import React from 'react'
 import SideBar from '../SideBar/sidebar'
 import Property from './Property'
+import SearchAdd from './SearchAdd/SearchAdd'
+import "./Home.css"
 
 export default function Home(){
     return(
@@ -13,17 +15,15 @@ export default function Home(){
       </section>
       
       <section className='two'>
-      <Property />
-      {/* <SearchAdd /> */}
-      {/* <ListProp/> */}
+       <Property/>
+      <SearchAdd />
+
       </section>
         <div>
         </div>
     </div>
-        
-        
         </>
-    
+
          
       
     )

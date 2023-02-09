@@ -1,7 +1,11 @@
 .display-property{
-    background-color : #ffffff;
-    padding : 30px;
+    /* background-color : #ffffff; */
+    /* background-color: antiquewhite; */
+    padding : 22px;
     border-bottom: 2px solid  #E1F9F4;
+    width: 66vw;
+    margin-left: auto;
+    /* margin-top: auto; */
 }
 
 .user{
