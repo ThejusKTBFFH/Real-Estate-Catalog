@@ -11,8 +11,8 @@ export default function addNewProperty() {
                         <span>1</span><div>Basic Info</div>
                         </div>
 
-                    <div className={tab === "/PersonalDetails" ? "tabs" : "tabs2"}>
-                        <span>2</span><div>Personal Details</div>
+                    <div className={tab === "/PropertyDetails" ? "tabs" : "tabs2"}>
+                        <span>2</span><div>Property Details</div>
                     </div>
 
                     <div className={tab === "/GeneralInfo" ? "tabs" : "tabs2"}>

@@ -119,28 +119,28 @@ export default function BasicInfo() {
 
             <div className="box2">
 
-            <div className="row">
-              <div>
-                <span className="titles">Property Age</span>
-                <div className="selectBox">
-                  <select
-                    defaultValue={"toilet"}
-                    className="selectBox"
-                    onChange={(e) => {
-                      setDetails({
-                        ...basicDetails,
-                        Property_Age: e.target.value,
-                      });
-                    }}
-                  >
-                    <option value={"toilet"}>Property Age</option>
-                    <option>Flat</option>
-                    <option>House</option>
-                    <option>Plot</option>
-                  </select>
+              <div className="row">
+                <div>
+                  <span className="titles">Property Age</span>
+                  <div className="selectBox">
+                    <select
+                      defaultValue={"toilet"}
+                      className="selectBox"
+                      onChange={(e) => {
+                        setDetails({
+                          ...basicDetails,
+                          Property_Age: e.target.value,
+                        });
+                      }}
+                    >
+                      <option value={"toilet"}>Property Age</option>
+                      <option>Flat</option>
+                      <option>House</option>
+                      <option>Plot</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
 
               <div>
                 <span className="titles">Property Approved</span>
@@ -204,31 +204,31 @@ export default function BasicInfo() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="newbuttoncontainer">
+            <div className="newbutton">
+              <button
+                onClick={() => {
+                  navigator("/home", { state: basicDetails });
+                }}
+              >
+                Cancel
+              </button>
             </div>
 
-            <div className="newbuttoncontainer">
-              <div className="newbutton">
-                <button
-                  onClick={() => {
-                    navigator("/home", { state: basicDetails });
-                  }}
-                >
-                  Cancel
-                </button>
-              </div>
-
-              <div className="newbutton">
-                <button
-                  onClick={() => {
-                    navigator("/propertyDetail", {
-                      state: { basicDetails: basicDetails },
-                    });
-                  }}
-                >
-                  Save & Continue
-                </button>
-              </div>
+            <div className="newbutton">
+              <button
+                onClick={() => {
+                  navigator("/propertyDetail", {
+                    state: { basicDetails: basicDetails },
+                  });
+                }}
+              >
+                Save & Continue
+              </button>
             </div>
+          </div>
         </div>
       </div>
     </>
