@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Property from "../Display/Property";
 import SideBar from "../SideBar/sidebar";
-import AddNewProperty from "./addNewProperty";
+import AddNewProperty from "./AddNewProperty";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./PropertyDetails.css";
 // import { useEffect } from "react";
@@ -27,11 +27,11 @@ const PropertyDetail = () => {
     Electricity: "",
     Facing: "",
   });
-  //const basicDetails = location.state.basicDetails;
+  const basicDetails = location.state.basicDetails;
 
   const onContinue = () => {
     //console.log(propertyDetails);
-    navigator("/generalInfo");
+    navigator("/generalInfo",{ state: { propertyDetails, basicDetails } });
   };
 
   return (
@@ -260,7 +260,7 @@ const PropertyDetail = () => {
 
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"property"}
                       className="selectBox"
                       onChange={(e) => {
                         setPropertyDetails({
@@ -269,9 +269,9 @@ const PropertyDetail = () => {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Western Toilet</option>
+                      <option value={"property"}>Lift</option>
                       <option>Yes</option>
-                      <option>NO</option>
+                      <option>No</option>
                     </select>
                   </div>
                 </div>
@@ -280,7 +280,7 @@ const PropertyDetail = () => {
                   <span className="titles">Electricity</span>
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"property"}
                       className="selectBox"
                       onChange={(e) => {
                         setPropertyDetails({
@@ -289,9 +289,9 @@ const PropertyDetail = () => {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Western Toilet</option>
+                      <option value={"property"}>Electricity</option>
                       <option>Yes</option>
-                      <option>NO</option>
+                      <option>No</option>
                     </select>
                   </div>
                 </div>
@@ -303,7 +303,7 @@ const PropertyDetail = () => {
 
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"property"}
                       className="selectBox"
                       onChange={(e) => {
                         setPropertyDetails({
@@ -312,9 +312,9 @@ const PropertyDetail = () => {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Western Toilet</option>
+                      <option value={"property"}>Facing</option>
                       <option>Yes</option>
-                      <option>NO</option>
+                      <option>No</option>
                     </select>
                   </div>
                 </div>

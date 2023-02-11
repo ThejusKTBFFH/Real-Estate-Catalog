@@ -13,7 +13,7 @@ const SearchAdd = () => {
             <input type="text" placeholder="Search PPD ID" />
           </div>
           <div>
-            <img src={SearchLogo} alt="Search" srcset="" />
+            <img src={SearchLogo} alt="Search" />
           </div>
         </div>
         <div className="add">
