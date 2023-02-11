@@ -1,16 +1,26 @@
 import React from "react";
-import AddNewProperty from "./addNewProperty";
+import AddNewProperty from "./AddNewProperty";
 import Sidebar from "../SideBar/sidebar";
 import Property from "../Display/Property";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./LocationInfo.css";
+import axios from "axios";
 
-export default function LocationInfo() {
-  const navigator = useNavigate()
+const LocationInfo = () => {
   const location = useLocation()
+  const basicDetails = location.state.basicDetails;
+  //console.log( details);
+
+  const localmail = (window.localStorage.getItem("email"));
+  const propertyDetails = location.state.propertyDetails;
+  const generalInfo = location.state.generalInfo;
+  const navigator = useNavigate()
+
+
+
   const [locationInfo, setLocationInfo] = useState({
-    email: "",
+    email: localStorage.getItem("email"),
     city: "",
     area: "",
     pincode: "",
@@ -19,6 +29,35 @@ export default function LocationInfo() {
     latitude: "",
     longitude: "",
   });
+
+  const allDetails = Object.assign(
+    basicDetails,
+    propertyDetails,
+    generalInfo,
+    locationInfo
+  );
+  const onAdd = async (e) => {
+    e.preventDefault();
+
+    // console.log(allDetails)
+
+    axios.post('http://localhost:8081/property', allDetails)
+      .then(response => {
+        console.log(response.data);
+        alert("properties added successfully")
+        navigator("/home");
+      })
+      .catch(error => {
+        console.log(error);
+        navigator("/home");
+      });
+
+
+
+
+
+  }
+
 
   return (
     <>
@@ -38,8 +77,10 @@ export default function LocationInfo() {
 
                   <div className="selectBox">
                     <input
+                      value={locationInfo.email}
                       className="selectBox"
                       placeholder="Email"
+                      onBlur={(e) => { if (location.email != localStorage.getItem("email")) { alert("Please enter the email linked to this account") } }}
                       onChange={(e) => {
                         setLocationInfo({
                           ...LocationInfo,
@@ -54,7 +95,7 @@ export default function LocationInfo() {
                   <span>City</span>
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"Property"}
                       className="selectBox"
                       onChange={(e) => {
                         setLocationInfo({
@@ -63,7 +104,7 @@ export default function LocationInfo() {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Select City</option>
+                      <option value={"Property"}>Select City</option>
                       <option>Delhi</option>
                       <option>Ranchi</option>
                       <option>Mumbai</option>
@@ -79,7 +120,7 @@ export default function LocationInfo() {
 
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"Property"}
                       className="selectBox"
                       onChange={(e) => {
                         setLocationInfo({
@@ -88,7 +129,7 @@ export default function LocationInfo() {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Select Area</option>
+                      <option value={"Property"}>Select Area</option>
                       <option>Yes</option>
                       <option>NO</option>
                     </select>
@@ -99,7 +140,7 @@ export default function LocationInfo() {
                   <span>Pincode</span>
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"Property"}
                       className="selectBox"
                       onChange={(e) => {
                         setLocationInfo({
@@ -108,7 +149,7 @@ export default function LocationInfo() {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Select Pincode</option>
+                      <option value={"Property"}>Select Pincode</option>
                       <option>834004</option>
                       <option>834001</option>
                     </select>
@@ -200,7 +241,7 @@ export default function LocationInfo() {
             </div>
 
             <div className="newbutton">
-              <button>Add Property</button>
+              <button onClick={onAdd}>Add Property</button>
             </div>
           </div>
         </div>
@@ -208,3 +249,5 @@ export default function LocationInfo() {
     </>
   )
 }
+
+export default LocationInfo;

@@ -12,7 +12,7 @@ function Signup() {
      if(data.password !==data.cpassword){
          return toast.error(`password doesn't match`)
      }
- fetch("",{
+ fetch("https://real-estate-calatog-backend.onrender.com/api/signup",{
      method:"post",
      headers:{
          "Content-Type" : "application/json"

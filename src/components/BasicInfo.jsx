@@ -1,5 +1,5 @@
 import React from "react";
-import AddNewProperty from "./addNewProperty";
+import AddNewProperty from "./AddNewProperty.jsx";
 import Sidebar from "../SideBar/sidebar";
 import Property from "../Display/Property";
 import { useState } from "react";
@@ -8,7 +8,7 @@ import "./BasicInfo.css";
 
 export default function BasicInfo() {
   const navigator = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
   const [basicDetails, setDetails] = useState({
     Property_Type: "",
     Negotiable: "",
@@ -20,17 +20,11 @@ export default function BasicInfo() {
     Bank_Loan: "",
   });
 
-  function InputExample() {
-    const [value, setValue] = useState("");
+  const onContinue = () => {
+    navigator("/propertyDetail", { state: { basicDetails: basicDetails } });
+  };
 
-    return (
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-    );
-  }
+
 
   return (
     <>
@@ -50,7 +44,7 @@ export default function BasicInfo() {
 
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"property"}
                       className="selectBox"
                       onChange={(e) => {
                         setDetails({
@@ -59,7 +53,7 @@ export default function BasicInfo() {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Select propety Type</option>
+                      <option value={"property"}>Select propety Type</option>
                       <option>Flat</option>
                       <option>House</option>
                       <option>Plot</option>
@@ -70,7 +64,7 @@ export default function BasicInfo() {
               <span className="titles">Negotiable</span>
               <div className="selectBox">
                 <select
-                  defaultValue={"toilet"}
+                  defaultValue={"property"}
                   className="selectBox"
                   onChange={(e) => {
                     setDetails({
@@ -79,7 +73,7 @@ export default function BasicInfo() {
                     });
                   }}
                 >
-                  <option value={"toilet"}>Select Negotiable</option>
+                  <option value={"property"}>Select Negotiable</option>
                   <option>Yes</option>
                   <option>No</option>
                 </select>
@@ -90,8 +84,10 @@ export default function BasicInfo() {
 
                   <div className="selectBox">
                     <input
+                      type={"number"}
                       placeholder="Example:10000"
-                      onClick={InputExample}
+                      value={basicDetails.Price}
+                      onChange={(e) => { setDetails({ ...basicDetails, Price: e.target.value }) }}
                     ></input>
                   </div>
                 </div>
@@ -99,7 +95,7 @@ export default function BasicInfo() {
                   <span className="titles">Ownership</span>
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"property"}
                       className="selectBox"
                       onChange={(e) => {
                         setDetails({
@@ -108,7 +104,7 @@ export default function BasicInfo() {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Select Ownership</option>
+                      <option value={"property"}>Select Ownership</option>
                       <option>Yes</option>
                       <option>No</option>
                     </select>
@@ -124,7 +120,7 @@ export default function BasicInfo() {
                   <span className="titles">Property Age</span>
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"property"}
                       className="selectBox"
                       onChange={(e) => {
                         setDetails({
@@ -133,7 +129,7 @@ export default function BasicInfo() {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Property Age</option>
+                      <option value={"property"}>Property Age</option>
                       <option>Flat</option>
                       <option>House</option>
                       <option>Plot</option>
@@ -146,7 +142,7 @@ export default function BasicInfo() {
                 <span className="titles">Property Approved</span>
                 <div className="selectBox">
                   <select
-                    defaultValue={"toilet"}
+                    defaultValue={"property"}
                     className="selectBox"
                     onChange={(e) => {
                       setDetails({
@@ -155,7 +151,7 @@ export default function BasicInfo() {
                       });
                     }}
                   >
-                    <option value={"toilet"}>Property Approved</option>
+                    <option value={"property"}>Property Approved</option>
                     <option>Yes</option>
                     <option>No</option>
                   </select>
@@ -167,7 +163,7 @@ export default function BasicInfo() {
 
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"property"}
                       className="selectBox"
                       onChange={(e) => {
                         setDetails({
@@ -176,7 +172,7 @@ export default function BasicInfo() {
                         });
                       }}
                     >
-                      <option value={"toilet"}></option>
+                      <option value={"property"}></option>
                       <option>Flat</option>
                       <option>House</option>
                       <option>Plot</option>
@@ -187,7 +183,7 @@ export default function BasicInfo() {
                   <span className="titles">Bank Loan</span>
                   <div className="selectBox">
                     <select
-                      defaultValue={"toilet"}
+                      defaultValue={"property"}
                       className="selectBox"
                       onChange={(e) => {
                         setDetails({
@@ -196,7 +192,7 @@ export default function BasicInfo() {
                         });
                       }}
                     >
-                      <option value={"toilet"}>Bank Loan</option>
+                      <option value={"property"}>Bank Loan</option>
                       <option>Yes</option>
                       <option>No</option>
                     </select>
@@ -218,15 +214,7 @@ export default function BasicInfo() {
             </div>
 
             <div className="newbutton">
-              <button
-                onClick={() => {
-                  navigator("/propertyDetail", {
-                    state: { basicDetails: basicDetails },
-                  });
-                }}
-              >
-                Save & Continue
-              </button>
+              <button onClick={onContinue}>Save & Continue</button>
             </div>
           </div>
         </div>

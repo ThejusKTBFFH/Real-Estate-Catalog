@@ -9,11 +9,13 @@
     justify-content: space-around;
     color: #284E91;
 }
+
 .listprop:hover {
     border: 2px solid #6AB4F8;
     border-radius: 6px;
-   cursor: pointer;
+    cursor: pointer;
 }
+
 .dislist {
     height: 40px;
     display: flex;
@@ -22,7 +24,7 @@
     margin-top: 2vmax;
     color: #1F1F1F;
     font-weight: 200;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .dislist img {
@@ -42,8 +44,9 @@
 .dislist:hover {
     border: 2px solid #6AB4F8;
     border-radius: 6px;
-   cursor: pointer;
+    cursor: pointer;
 }
+
 .noprop {
     display: flex;
     align-items: center;
@@ -53,4 +56,29 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: aquamarine;
 
+}
+
+.fetching {
+    position: absolute;
+    left: 60vh;
+    top: 50vh;
+    font-size: 2rem;
+    animation: scale 2s infinite;
+}
+
+@keyframes scale {
+    0% {
+        scale: 1;
+        color: aquamarine;
+    }
+
+    50% {
+        scale: 1.5;
+        color: aqua;
+    }
+
+    100% {
+        scale: 1;
+        color: #6AB4F8;
+    }
 }

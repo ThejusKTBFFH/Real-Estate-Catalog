@@ -1,31 +1,32 @@
 import axios from "axios";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import Uslogo from "./HomeLogo/uslogo.svg"
 import './Property.css'
 
 
-import {ToastContainer, toast} from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
-const Property =()=>{
+const Property = () => {
     const navigator = useNavigate()
 
-    // let email = window.localStorage.getItem('email');
-    // let setemail = email.split('@')[0]
+    let email = window.localStorage.getItem('email');
+    let setemail = email.split('@')[0]
 
-    const handleLogout = ()=>{
-        axios.get('')
-        .then((data)=>{
-            localStorage.removeItem('email')
-            localStorage.removeItem('id')
-            toast.success(data.data.massage);
-            navigator("/");
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
+    const handleLogout = () => {
+        axios.get('https://real-estate-calatog-backend.onrender.com/signout')
+            .then((data) => {
+                localStorage.removeItem('email')
+                localStorage.removeItem('id')
+                localStorage.removeItem('token')
+                toast.success(data.data.massage);
+                navigator("/");
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
-    return(
+    return (
         <div className="display-property">
             <div className="user">
                 <div className="right">
@@ -39,7 +40,7 @@ const Property =()=>{
                         <div className="select">
                             <select defaultValue={'Username'} onChange={handleLogout}>
                                 <option value="Username">
-                                    {/* {`${setemail}`} */}email
+                                    {`${setemail}`}
                                 </option>
                                 <option value={'Sign Out'}>
                                     Sign Out
@@ -49,7 +50,7 @@ const Property =()=>{
                     </section>
                 </div>
             </div>
-            <ToastContainer/>
+            <ToastContainer />
         </div>
     )
 }
