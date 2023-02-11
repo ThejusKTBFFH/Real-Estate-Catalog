@@ -13,7 +13,7 @@ const Property = () => {
     let setemail = email.split('@')[0]
 
     const handleLogout = () => {
-        axios.get('https://real-estate-calatog-backend.onrender.com/signout')
+        axios.get('https://real-estate-catalog-new-backend.onrender.com/signout')
             .then((data) => {
                 localStorage.removeItem('email')
                 localStorage.removeItem('id')

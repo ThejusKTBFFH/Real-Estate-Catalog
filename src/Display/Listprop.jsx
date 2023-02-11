@@ -29,7 +29,7 @@ const Listprop = () => {
 
         // console.log(id);
 
-        axios.get(`http://localhost:8081/userdetails/${id}`)
+        axios.get(`https://real-estate-catalog-new-backend.onrender.com/userdetails/${id}`)
             .then((data) => {
                 // console.log(data)
                 let user = data.data.userProperties;

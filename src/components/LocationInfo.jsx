@@ -41,7 +41,7 @@ const LocationInfo = () => {
 
     // console.log(allDetails)
 
-    axios.post('http://localhost:8081/property', allDetails)
+    axios.post('https://real-estate-catalog-new-backend.onrender.com/property', allDetails)
       .then(response => {
         console.log(response.data);
         alert("properties added successfully")
